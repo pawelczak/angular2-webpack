@@ -1,11 +1,13 @@
+const webpack = require('webpack');
+
+
 module.exports = {
 
   entry: {
 
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'main': './src/main.browser.ts',
-    'index': "./src/index"
+    //'polyfills': './src/polyfills.ts',
+    //'vendor': './src/vendor.ts',
+    'main': './src/main.browser.ts'
 
   },
 
@@ -32,10 +34,25 @@ module.exports = {
     {
       test:   /\.html/,
       loader: 'html'
+    },
+    {
+      test: /\.css$/,
+      loader: 'raw-loader'
     }
+
+    ],
+
+    plugins: [
+      new webpack.optimize.CommonsChunkPlugin({
+        //name: helpers.reverse(['polyfills', 'vendor', 'main']),
+        name: ['main', 'vendor', 'polyfills'],
+        minChunks: Infinity
+      })
 
     ]
   }
+
+
 
 
 };

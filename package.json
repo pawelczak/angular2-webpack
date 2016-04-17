@@ -1,5 +1,5 @@
 {
-  "name": "angular2-webpack deal shark",
+  "name": "angular2-webpack",
   "dependencies": {
     "angular2": "2.0.0-beta.15",
     "es6-promise": "^3.1.2",
@@ -12,6 +12,7 @@
     "css-loader": "^0.23.1",
     "html-loader": "^0.4.3",
     "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.7.2",
@@ -21,6 +22,6 @@
   },
   "scripts": {
     "build": "webpack",
-    "play": "webpack-dev-server"
+    "start": "webpack-dev-server"
   }
 }
