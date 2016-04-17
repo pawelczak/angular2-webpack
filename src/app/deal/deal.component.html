@@ -1,0 +1,45 @@
+<h2>Game deal search</h2>
+<form class="form-horizontal" (ngSubmit)="search()" >
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Title" [(ngModel)]="dealSearchForm.title">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" [(ngModel)]="dealSearchForm.onSale"> on Sale
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" [(ngModel)]="dealSearchForm.steamWorks"> works on Steam
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Search</button>
+        </div>
+    </div>
+
+</form>
+
+<div *ngIf="deals.length > 0" >
+    <h2>
+        Result list <span>({{deals.length}})</span>
+    </h2>
+
+    <deals-list [deals]="deals" ></deals-list>
+</div>
