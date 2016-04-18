@@ -13,9 +13,11 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            {pattern: '../node_modules/es6-shim/es6-shim.js', included: true, watched: false},
-            {pattern: '../node_modules/angular2/bundles/angular2-polyfills.js', included: true, watched: false},
-            {pattern: './karma-shim.js', watched: false}
+            {pattern: 'node_modules/es6-shim/es6-shim.js', included: true, watched: false},
+            {pattern: 'node_modules/angular2/bundles/angular2-polyfills.js', included: true, watched: false},
+            'node_modules/traceur/bin/traceur-runtime.js',
+            'node_modules/traceur/bin/traceur.js',
+            {pattern: 'karma-shim.js', watched: false}
         ],
 
         // list of files to exclude
@@ -67,7 +69,10 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'], // you can also use Chrome
+        browsers: [
+            'Chrome'
+            //'PhantomJS'
+        ], // you can also use Chrome
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits

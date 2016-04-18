@@ -1,6 +1,18 @@
 Error.stackTraceLimit = Infinity;
 
 /*
+require('core-js');
+
+require('zone.js/dist/zone.js');
+require('zone.js/dist/long-stack-trace-zone.js');
+require('zone.js/dist/jasmine-patch.js');
+//require('traceur/bin/traceur-runtime.js');
+//require('traceur/bin/traceur.js');
+
+require('rxjs/Rx');
+*/
+
+/*
  Ok, this is kinda crazy. We can use the the context method on
  require that webpack created in order to tell webpack
  what files we actually want to require or import.
